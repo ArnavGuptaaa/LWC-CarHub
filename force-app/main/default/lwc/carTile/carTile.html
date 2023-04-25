@@ -1,0 +1,9 @@
+<template>
+    <div class="slds-var-m-vertical_small slds-text-align_center car-tile" onclick={handleClick}>
+        <img src={car.Picture_URL__c} alt="car">
+        <div>
+            <strong>{car.Name}</strong>
+            <p>$ {car.MSRP__c}</p>
+        </div>
+    </div>
+</template>

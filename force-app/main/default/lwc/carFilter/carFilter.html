@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Car filter" icon-name="standard:filter">
+        <div class="slds-var-m-around_medium">
+            <!-- SEARCH BAR -->
+            <lightning-input label="Search key" type="search" value={filters.searchKey} onchange={handleSearchKeyChange}></lightning-input>
+            <lightning-slider label="Max price" class="slds-var-m-top_small" min="0" max="999999" step="100" value={filters.maxPrice} onchange={handleMaxPriceChange}></lightning-slider>
+            
+            <!-- CATEGORY -->
+            <template if:true={categoryPicklistValues.data}>
+                <div class="slds-var-m-top_small">
+                    <strong>Category</strong>   
+                    <template for:each={categoryPicklistValues.data.values} for:item="val">
+                        <lightning-input key={val.label} type="checkbox"  label={val.label} value={val.label} name="category" onchange={handleCategoryCheckboxChange}></lightning-input>
+                    </template>
+                </div>
+            </template>
+            
+            <!-- MAKE --> 
+            <template if:true={makePicklistValues.data}>
+                <div class="slds-var-m-top_small">
+                    <strong>Make</strong>   
+                    <template for:each={makePicklistValues.data.values} for:item="val">
+                        <lightning-input key={val.label} type="checkbox"  label={val.label} value={val.label} name="makeType" onchange={handleMakeCheckboxChange}></lightning-input>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>carCard</masterLabel>
+    <isExposed>false</isExposed>
+    <description>This event is fired when a car tile is clicked</description>
+    <lightningMessageFields>
+        <fieldName>recordId</fieldName>
+        <description>recordId of the selected car</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

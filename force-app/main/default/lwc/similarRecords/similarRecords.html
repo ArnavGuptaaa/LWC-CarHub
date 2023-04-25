@@ -1,0 +1,25 @@
+<template>
+    <template if:false={similarRecords}>
+        <lightning-card>
+            <div class="slds-var-p-around_medium slds-text-align_center">
+                <lightning-button variant="brand" label="Fetch similar records" onclick={handleButtonClick}></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:true={similarRecords}>
+        <lightning-card>
+            <div class="slds-var-p-around_medium">
+                <template for:each={similarRecords} for:item="record">
+                    <lightning-layout key={record.Id} horizontal-align="space" vertical-align="center">
+                        <img src={record.Picture_URL__c} class="similar-record-image" alt="record image">
+                        <div>
+                            <Strong>{record.Name}</Strong>
+                            <p>$ {record.MSRP__c}</p>
+                        </div>
+                        <lightning-button label="Show record" data-recordid={record.Id} onclick={handleNavigation}></lightning-button>
+                    </lightning-layout>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+</template>

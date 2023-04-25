@@ -1,0 +1,11 @@
+.car-tile {
+    background-color: #ededed;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.car-tile:hover {
+    transform: scale(1.1);
+}

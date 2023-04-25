@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Car list" icon-name="standard:contact_list">
+        <template if:true={cars}>
+            <div class="slds-grid slds-gutters slds-wrap slds-var-m-around_medium">
+                <template for:each={cars} for:item="car">
+                    <c-car-tile key={car.Id} car={car} class="slds-col slds-size_3-of-12" onselected={handleSelected}></c-car-tile>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>
